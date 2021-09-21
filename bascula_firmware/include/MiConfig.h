@@ -18,9 +18,6 @@
 #include <Q2HX711.h>	// Librería de  Scott Russell
 // ======= Para impresora =======
 #include <Adafruit_Thermal.h>
-// ======= Para conseguir fecha actual =======
-// #include <NTPClient.h>
-// #include <WiFiUdp.h>
 
 /* === Variable para debugg === */
 // #define __DEBUGG (bool) false
