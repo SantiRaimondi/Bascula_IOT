@@ -47,7 +47,7 @@
 #define WIFI_DISCONNECT_GPIO (uint8_t) 0	/* Pin del boton de desconexion de WiFi */
 #define SSID (const char *) "BASCULA"
 #define PASS (const char *) "123456789"
-#define BD_URL (String) "http://irresponsible-toolb.000webhostapp.com/my_php/dbwrite_bascula.php"
+#define BD_URL (String) "---------------------" /* COMPLETAR CON URL DE LA BD A DONDE SE ENVIARA LA INFORMACION*/
 
 
 
