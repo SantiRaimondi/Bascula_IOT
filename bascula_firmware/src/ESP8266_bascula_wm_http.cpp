@@ -1,6 +1,6 @@
  /*
-	Fecha: 10/05/2021
-	Autores: Santiago Raimondi, Fernando Segura Atencio @RSAsolucionesTecnologicas
+	Fecha: 21/09/2021
+	Autores: Santiago Raimondi
 	Version: 0.0.3
 
 	Descripcion general de funcionamiento:
