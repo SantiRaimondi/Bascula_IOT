@@ -189,13 +189,14 @@ Important details about the board connections:
 		
 		The maximum capacity is (4096-101 = 3995) bytes, therefore I can save 3995/TAMANO_DATO = 799 pieces of data.
     	
-	+) Library dependencies used (lib_deps):
-		lib_deps = 
-			marcoschwartz/LiquidCrystal_I2C@^1.1.4
-			robtillaart/I2CKeyPad@0.1.2
-			miguelbalboa/MFRC522@^1.4.8
-			arkhipenko/Dictionary@^3.2.2
-			queuetue/Queuetue HX711 Library@^1.0.2
-			adafruit/Adafruit Thermal Printer Library@^1.4.0
-			https://github.com/tzapu/WiFiManager.git
-			arduino-libraries/NTPClient@^3.1.0
+Library dependencies used (lib_deps):
+
+	lib_deps = 
+		marcoschwartz/LiquidCrystal_I2C@^1.1.4
+		robtillaart/I2CKeyPad@0.1.2
+		miguelbalboa/MFRC522@^1.4.8
+		arkhipenko/Dictionary@^3.2.2
+		queuetue/Queuetue HX711 Library@^1.0.2
+		adafruit/Adafruit Thermal Printer Library@^1.4.0
+		https://github.com/tzapu/WiFiManager.git
+		arduino-libraries/NTPClient@^3.1.0
