@@ -102,9 +102,18 @@ Dependencias de librerias utilizadas (lib_deps):
 		https://github.com/tzapu/WiFiManager.git
 		arduino-libraries/NTPClient@^3.1.0
 
-Esquemático: 
+#### Esquemático
+
+![sch](https://github.com/SantiRaimondi/Bascula_IOT/blob/main/img/sch.jpg?raw=true)
 
 
+#### PCB layout
+
+![pcb](https://github.com/SantiRaimondi/Bascula_IOT/blob/main/img/pcb.jpg?raw=true)
+
+#### Vista 3D
+
+![3d](https://github.com/SantiRaimondi/Bascula_IOT/blob/main/img/3dpcb.jpg?raw=true)
 
 ### English
 
@@ -200,3 +209,16 @@ Library dependencies used (lib_deps):
 		adafruit/Adafruit Thermal Printer Library@^1.4.0
 		https://github.com/tzapu/WiFiManager.git
 		arduino-libraries/NTPClient@^3.1.0
+
+#### Schematic
+
+![sch](https://github.com/SantiRaimondi/Bascula_IOT/blob/main/img/sch.jpg?raw=true)
+
+
+#### PCB layout
+
+![pcb](https://github.com/SantiRaimondi/Bascula_IOT/blob/main/img/pcb.jpg?raw=true)
+
+#### 3D View
+
+![3d](https://github.com/SantiRaimondi/Bascula_IOT/blob/main/img/3dpcb.jpg?raw=true)
