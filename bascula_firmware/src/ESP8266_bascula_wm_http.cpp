@@ -1,7 +1,7 @@
  /*
-	Fecha: 21/09/2021
-	Autores: Santiago Raimondi
-	Version: 0.0.3
+	Fecha: 10/05/2021
+	Autores: Santiago Raimondi, Fernando Segura Atencio @RSAsolucionesTecnologicas
+	Version: 0.0.4
 
 	Descripcion general de funcionamiento:
 		Cuando se inicia la placa, si no fue anteriormente conectada a una red WiFi
@@ -31,7 +31,7 @@
 		D6 (GPIO12):MISO (SPI)	-> Usado por dispositivo RFID
 		D4 (GPIO2): LED principal. Pin en PullUp interno	-> Usado por HX711 (data_pin)
 		D8 (GPIO15): PullDown. CS (SPI)	-> Usado por dispositivo RFID
-		D3 (GPIO0): PullUp		-> Pin NO UTILIZADO (SI APTO INTERRUPCIONES)
+		D3 (GPIO0): PullUp		-> Boton desconexion WiFi.
 		D7 (GPIO13): MOSI (SPI)	-> Usado por dispositivo RFID
 		D0 (GPIO16) Segundo LED de la placa	-> Usado por HX711 (clk_pin)
 		Rx	->	Tx de la impresora
@@ -135,30 +135,36 @@ bool tara_presionado = false;	      // Bandera para saber si se presionó el bot
 void iniciarEEPROM();
 void grabarMediciones();
 String leerMediciones();
+
 // ======= Para WiFi =======
 
 void iniciarWiFi();
 void reconnectWifi();
 IRAM_ATTR void desconectarWifi();
 void checkDisconnect();
+
 // ======= Para hacer la transmision de datos =======
 
 void transmitirDatos();
 void transmitirDatosGuardados();
 
 // ======= Para display LCD =======
+
 void iniciarLCD();
+
 // ======= Para teclado y receptor RFID =======
 
 void configPines();				
 void leerTeclado();
 void crearID();
+
 // ======= Para bascula =======
 
 void iniciarBascula();
 void pesar();
 void ingresarId();
 void ingresarSurco();
+
 // ======= Para impresora =======
 
 void iniciarImpresora();
@@ -320,7 +326,7 @@ void iniciarWiFi()
 
 /**
  * Funcion que revisa si hay informacion de una red guardada y se intenta reconectar. 
- * FUNCION NO UTILIZADA EN V0.0.3
+ * FUNCION NO UTILIZADA DESDE V0.0.3
 */
 void reconnectWifi()
 {	
