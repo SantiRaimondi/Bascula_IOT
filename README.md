@@ -4,11 +4,20 @@ Repository with information and files of the IOT Scale project
 
 ## Índice / Index:
 1. [Español](#español).
-2. [English](#english).
+	1.  [Descripcion general de funcionamiento](#descripcion-general-de-funcionamiento).
+	2.  [Esquemático](#esquemático).
+	3.  [PCB](#pcb).
+	4.  [Vista 3D](#vista-3d).
+3. [English](#english).
+	1. [Functional description](#functional-description).
+	2. [Schematic](#schematic).
+	3. [PCB layout](#pcb-layout).
+	4. [3D View](#3d-view).
 
 
 ### Español
-Descripcion general de funcionamiento:
+
+#### Descripcion general de funcionamiento
 
 Cuando se inicia la placa, si no fue anteriormente conectada a una red WiFi
 se habilita un portal AP para configurar el dispositivo al cual se ingresa cuando 
@@ -107,7 +116,7 @@ Dependencias de librerias utilizadas (lib_deps):
 ![sch](https://github.com/SantiRaimondi/Bascula_IOT/blob/main/img/sch.jpg?raw=true)
 
 
-#### PCB layout
+#### PCB 
 
 ![pcb](https://github.com/SantiRaimondi/Bascula_IOT/blob/main/img/pcb.jpg?raw=true)
 
@@ -117,7 +126,7 @@ Dependencias de librerias utilizadas (lib_deps):
 
 ### English
 
-  Functional description:
+#### Functional description
   
   When the board begins, it checks for WiFi networks in the area, if it doesn't find
   a networks whose credentials have been stored previously it starts an AP portal to 
