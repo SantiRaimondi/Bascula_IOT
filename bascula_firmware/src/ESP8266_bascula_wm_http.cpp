@@ -1,7 +1,7 @@
  /*
-	Fecha: 10/05/2021
+	Fecha: 25/09/2021
 	Autores: Santiago Raimondi, Fernando Segura Atencio @RSAsolucionesTecnologicas
-	Version: 0.0.4
+	Version: 0.0.5
 
 	Descripcion general de funcionamiento:
 		Cuando se inicia la placa, si no fue anteriormente conectada a una red WiFi
@@ -64,10 +64,10 @@
 	+) Mapeo de memoria EEPROM: Tamaño de dato = 7 Bytes (2->ID 5->Peso)
 		N° byte		|	Informacion
 		_____________________________
-			0		| SSID WiFi
-		   ...		|		"
-		    50		|	PASSWORD WiFi
-		   ...		|		"
+			0		| SSID WiFi (ESPACIOS NO UTILIZADOS CON LA LIBRERIA WiFiManager)
+		   ...		|		"	(ESPACIOS NO UTILIZADOS CON LA LIBRERIA WiFiManager
+		    50		|	PASSWORD WiFi	(ESPACIOS NO UTILIZADOS CON LA LIBRERIA WiFiManager
+		   ...		|		"			(ESPACIOS NO UTILIZADOS CON LA LIBRERIA WiFiManager
 		   100		|	Conectarse (bandera que indica conexion a red WiFi)
 		   101		|	cant_datos_guardados_H
 		   102		|	cant_datos_guardados_L
@@ -76,7 +76,7 @@
 		_____________________________
 		
 		La capacidad máxima de guardar datos es de (4096-101 = 3995) bytes por lo tanto puedo 
-		guardar	3995/TAMANO_DATO = 799.
+		guardar	3995/TAMANO_DATO = 570.
 	
 	+) Dependencias de librerias utilizadas (lib_deps):
 		lib_deps = 
@@ -87,7 +87,6 @@
 			queuetue/Queuetue HX711 Library@^1.0.2
 			adafruit/Adafruit Thermal Printer Library@^1.4.0
 			https://github.com/tzapu/WiFiManager.git
-			arduino-libraries/NTPClient@^3.1.0
 */
 
 #include "MiConfig.h"
@@ -366,10 +365,16 @@ void iniciarEEPROM()
 {
 	EEPROM.begin(4096);	// Cantidad total de bytes a usar de la memoria EEPROM (valor maximo es de 4096 Bytes)
 	
-	uint8_t cant_datos_guardadosH = uint8_t(cant_datos_guardados/256);
+	uint8_t cant_datos_guardadosH = EEPROM.read(101);
+	
+	/**
+	 * Si la memoria alta esta en 255, quiere decir que es la primera vez que se enciende el dispositivo, 
+	 * por eso se llena con 0 y asi la segunda vez que se encienda el dispositivo este if() no se ejecutara.
+	 * El if() solo se ejecuta la primera vez que se utiliza el dispositivo ya que luego de haberse ejecutado,
+	 * siempre habra un numero distinto a 255 en esa parte de la memoria.
+	*/
 	if(cant_datos_guardadosH == 255)
 	{
-		// Por default el valor de un byte de EEPROM es 255, por lo que si esta en ese valor escribimos un 0.
 		cant_datos_guardados = 0;
 		EEPROM.write(101, (uint8_t)cant_datos_guardados);
 		EEPROM.write(102, (uint8_t)cant_datos_guardados);
@@ -575,8 +580,8 @@ void crearID()
 
 /**
  * Se inicia el sensor HX711 para lo cual se requiere que se posicione sobre la 
- * balanza una masa de calibracion. Se usa para calcular un desvío de la balanza 
- * para poder tener maxima precision.
+ * balanza una masa de calibracion.
+ * Se encuentran dos puntos para encontrar una curva de calibracion.
  * ES UNA FUNCION BLOQUEANTE!!
 */
 void iniciarBascula()
