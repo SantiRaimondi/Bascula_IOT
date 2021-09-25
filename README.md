@@ -85,10 +85,7 @@ Detalles importantes sobre conexionado a la placa:
 	+) Mapeo de memoria EEPROM: Tamaño de dato = 7 Bytes (2->ID 5->Peso)
 		N° byte		|	Informacion
 		_____________________________
-			0	|         SSID WiFi
-		   ...		|		"
-		    50		|	PASSWORD WiFi
-		   ...		|		"
+
 		   100		|	Conectarse (bandera que indica conexion a red WiFi)
 		   101		|	cant_datos_guardados_H
 		   102		|	cant_datos_guardados_L
@@ -97,7 +94,7 @@ Detalles importantes sobre conexionado a la placa:
 		_____________________________
 		
 		La capacidad máxima de guardar datos es de (4096-101 = 3995) bytes por lo tanto puedo 
-		guardar	3995/TAMANO_DATO = 799.
+		guardar	3995/TAMANO_DATO = 570.
 	
 Dependencias de librerias utilizadas (lib_deps):
 
@@ -109,7 +106,6 @@ Dependencias de librerias utilizadas (lib_deps):
 		queuetue/Queuetue HX711 Library@^1.0.2
 		adafruit/Adafruit Thermal Printer Library@^1.4.0
 		https://github.com/tzapu/WiFiManager.git
-		arduino-libraries/NTPClient@^3.1.0
 
 #### Esquemático
 
@@ -194,10 +190,7 @@ Important details about the board connections:
 	+) EEPROM memory maping: data size = 7 Bytes (2->ID 5->Peso)
 		N° byte		|	Information
 		_____________________________
-			0	|         SSID WiFi
-		   ...		|		"
-		    50		|	PASSWORD WiFi
-		   ...		|		"
+
 		   100		|	Conectarse (flag that indicates is there is a WiFi connection)
 		   101		|	cant_datos_guardados_H
 		   102		|	cant_datos_guardados_L
@@ -205,7 +198,7 @@ Important details about the board connections:
 		   4090		|		"
 		_____________________________
 		
-		The maximum capacity is (4096-101 = 3995) bytes, therefore I can save 3995/TAMANO_DATO = 799 pieces of data.
+		The maximum capacity is (4096-101 = 3995) bytes, therefore I can save 3995/TAMANO_DATO = 570 pieces of data.
     	
 Library dependencies used (lib_deps):
 
@@ -217,7 +210,6 @@ Library dependencies used (lib_deps):
 		queuetue/Queuetue HX711 Library@^1.0.2
 		adafruit/Adafruit Thermal Printer Library@^1.4.0
 		https://github.com/tzapu/WiFiManager.git
-		arduino-libraries/NTPClient@^3.1.0
 
 #### Schematic
 
