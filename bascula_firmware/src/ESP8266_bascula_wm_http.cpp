@@ -2,6 +2,8 @@
 	Fecha: 25/09/2021
 	Autores: Santiago Raimondi, Fernando Segura Atencio @RSAsolucionesTecnologicas
 	Version: 0.0.5
+	
+	In file: ../includes/MiConfig.h change BD to your database in order to receive msgs.
 
 	Descripcion general de funcionamiento:
 		Cuando se inicia la placa, si no fue anteriormente conectada a una red WiFi
@@ -172,7 +174,7 @@ void imprimir();
 // Código principal:
 void setup() 
 {
-	Serial.begin(115200);
+	Serial.begin(9600);
 	Serial.println();
 
 	// ------- Configuración de teclado ------- 
